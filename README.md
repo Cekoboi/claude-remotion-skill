@@ -111,19 +111,35 @@ Claude reads the skill, applies the motion rules, renders with Remotion, extract
 
 ## Examples
 
-[`examples/`](examples/) is a Remotion project with four finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, and a beat-synced code edit with a synthesized 120 BPM track. Each shipped only after the render, inspect frames, fix, re-render loop.
+[`examples/`](examples/) is a Remotion project with eight finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, and a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over. Each shipped only after the render, inspect frames, fix, re-render loop.
 
 Here is the Focus Cat promo, 15.5 seconds, with a pixel-art mascot drawn in code. Click it for the MP4 with sound:
 
 [![Focus Cat promo, made with this skill](examples/videos/focus-cat.gif)](https://github.com/haidrrrry/claude-remotion-skill/raw/main/examples/videos/focus-cat-promo.mp4)
 
-The other three render from source in a few minutes:
+And KL Night, a 20-second 9:16 Reel. The Petronas Towers and Menara KL draw themselves line by line, 388 windows light up while a counter tracks them, and the fireworks run on drag-and-gravity physics, ending in a heart. There are no image, video, or audio files: the 100 BPM gamelan-flavored track is synthesized, and each firework is panned to where it bursts. Click it for the MP4 with sound:
+
+[![KL Night, a Kuala Lumpur skyline Reel drawn in code](examples/videos/kl-night.gif)](examples/videos/kl-night.mp4)
+
+And Tanah Airku, a 25-second 9:16 Reel. A wau bulan flies over a Kedah paddy field at dawn, whip-pans to a Terengganu fishing boat at sunset, then the camera dives into the kite's center flower and comes out in a batik pattern drawn by canting, where a bunga raya blooms. Its petals open into the Jalur Gemilang. The score is an original zapin piece: Karplus-Strong gambus in the Hijaz mode, marwas, seruling, and a closing gong. Click it for the MP4 with sound:
+
+[![Tanah Airku, a wau bulan's flight across Malaysia](examples/videos/tanah-airku.gif)](examples/videos/tanah-airku.mp4)
+
+And Malaysia Neon, the same country as neon signs, 25 seconds. Gunung Kinabalu's granite crown traced in cyan over a synthwave sun and grid, a Pohon Beringin twirled onto a lamp-lit wayang kulit screen, a nasi lemak sign stuttering to life tube by tube on a mamak's brick wall, and MALAYSIA lit letter by letter over a wet street. Every flicker you see has a buzz-click you hear, and a virtual camera shakes on every kick, ignition and power cut, with an RGB split on the big hits. Click it for the MP4 with sound:
+
+[![Malaysia Neon](examples/videos/malaysia-neon.gif)](examples/videos/malaysia-neon.mp4)
+
+And Kerja Makan Gaji vs Kerja Sendiri, a 56-second isometric explainer in Bahasa Melayu. An office worker watches the clock spin from 9 to 6 and the salary drain into rent, car and bills. An online seller packs orders while sales notifications land and a revenue graph spikes, then drops. A split-screen weighs both sides, and the video ends on "Kau pilih yang mana? Komen di bawah." The music is an original 120 BPM track. A blind beat analysis (onset autocorrelation plus chroma downbeats) confirms the grid to within 7.5 ms, and every camera move, whip-pan, card, voice-over phrase and SFX lands on a beat. Click it for the MP4 with sound:
+
+[![Kerja Makan Gaji vs Kerja Sendiri](examples/videos/kerja-makan-gaji-vs-kerja-sendiri.gif)](examples/videos/kerja-makan-gaji-vs-kerja-sendiri.mp4)
+
+The others render from source in a few minutes:
 
 ```bash
 cd examples
 npm install
 npm run audio            # synthesize the SFX and music, no asset files needed
-npm run render:selffix   # or render:codeedit / render:profile / render:focuscat
+npm run render:selffix   # or render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
 ```
 
 ## 🤝 Contributing

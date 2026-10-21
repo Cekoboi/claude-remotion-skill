@@ -1,0 +1,16 @@
+{
+  "fps": 30,
+  "bpm": 100,
+  "scenes": { "hook": 4, "build": 12, "night": 10, "outro": 8 },
+  "type": { "text": "<KualaLumpur />", "startFrame": 6, "perChar": 2 },
+  "fireworks": [
+    { "beat": 16, "x": 540, "y": 420, "kind": "peony", "color": "white", "size": 1.25 },
+    { "beat": 18, "x": 250, "y": 560, "kind": "ring", "color": "cyan", "size": 0.9 },
+    { "beat": 19, "x": 830, "y": 500, "kind": "peony", "color": "pink", "size": 1.0 },
+    { "beat": 20, "x": 420, "y": 330, "kind": "willow", "color": "warm", "size": 1.1 },
+    { "beat": 21, "x": 760, "y": 640, "kind": "ring", "color": "pink", "size": 0.75 },
+    { "beat": 22, "x": 300, "y": 420, "kind": "peony", "color": "cyan", "size": 0.95 },
+    { "beat": 23, "x": 880, "y": 360, "kind": "peony", "color": "white", "size": 0.85 },
+    { "beat": 24, "x": 540, "y": 400, "kind": "heart", "color": "pink", "size": 1.3 }
+  ]
+}

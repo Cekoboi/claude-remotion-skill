@@ -75,6 +75,15 @@ If full Chrome errors with "Old Headless mode has been removed", use a
 `headless_shell` binary instead (Playwright ships one as
 `chromium_headless_shell-*/chrome-linux/headless_shell`).
 
+Behind an HTTPS proxy (corporate networks, cloud sandboxes), font or asset
+fetches can fail with `ERR_CERT_AUTHORITY_INVALID` / "Failed to fetch" even
+when the proxy CA is trusted: Remotion launches the browser with
+`--proxy-server=direct://`, bypassing the proxy. Never turn off certificate
+checks. Self-host the fonts instead (download the `.woff2` into `public/fonts/`
+and load it with `FontFace` + `staticFile` + `delayRender`), or point
+`--browser-executable` at a wrapper script that drops Remotion's proxy flags and
+passes `--proxy-server="$HTTPS_PROXY"` on to the real binary.
+
 ### Step 5 — VERIFY (mandatory, never skip)
 Extract frames at key moments and visually inspect each one. The portable
 method — works on machines with no system ffmpeg, renders the exact frame:
@@ -128,6 +137,10 @@ speech, see the captions section of `references/motion-patterns.md`.
   16-bit WAVs from a Node script (noise-burst whoosh, pitch-drop pop, sine-thump
   kick/bass, detuned-sine pad) into `public/sfx/` — see `examples/scripts/` in
   the repo. Zero downloads, fully deterministic.
+- **SFX timing duplicated by hand.** When audio is synthesized, keep the beat
+  grid and event list (BPM, scene lengths in beats, every hit) in one
+  `timing.json` that both the composition and the audio script import. Then
+  audio cannot drift from picture when you retime a scene.
 - Generating one giant component instead of themed, reusable pieces.
 - `durationInFrames` mismatch between Composition and scene content (dead air).
 - Forgetting `--overwrite` on re-renders, then inspecting the stale file.
