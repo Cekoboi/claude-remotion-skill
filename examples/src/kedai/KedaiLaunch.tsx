@@ -27,8 +27,8 @@ const SHOTS: [ShotName, React.ReactNode, number, number][] = [
   ["line2", <Line2 />, 2, 6],
   ["payoff", <Payoff />, 4, 8],
   ["outro", <Logo disclaimer />, 6, 10],
-  ["credit", <Credit />, 1, 1],
 ];
+const CREDIT = T.shots.credit;
 
 export const KedaiLaunch: React.FC = () => (
   <AbsoluteFill style={{ background: `radial-gradient(120% 90% at 50% 60%, ${K.colors.bgLift}, ${K.colors.bg} 70%)` }}>
@@ -47,6 +47,12 @@ export const KedaiLaunch: React.FC = () => (
         })}
       </CameraMotionBlur>
     </Bloom>
+    {/* the credit carries its own white glow; bloom would band it into rings */}
+    <Sequence name="credit" from={CREDIT.from} durationInFrames={CREDIT.dur}>
+      <Shot dur={CREDIT.dur} inF={1} outF={1}>
+        <Credit />
+      </Shot>
+    </Sequence>
     <Grain />
     <Vignette />
     <Audio src={staticFile("sfx/kedai-track.wav")} />

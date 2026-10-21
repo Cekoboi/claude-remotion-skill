@@ -439,13 +439,15 @@ export const Bloom: React.FC<{children: React.ReactNode}> = ({children}) => (
     <AbsoluteFill>{children}</AbsoluteFill>
     {GLOW_PASSES.map((g) => (
       <AbsoluteFill key={g.radius} style={{mixBlendMode: "screen", opacity: g.strength,
-        filter: `brightness(1.1) contrast(1.9) saturate(1.4) blur(${g.radius}px)`}}>
+        filter: `brightness(1.1) contrast(1.9) saturate(1.15) blur(${g.radius}px)`}}>
         {children}
       </AbsoluteFill>
     ))}
   </AbsoluteFill>
 );
 ```
+Leave out anything that already carries its own soft glow (a radial-gradient
+halo, a credit card): the contrast step bands smooth gradients into rings.
 On Chrome 149+ with HTML-in-canvas, `glow()` from `@remotion/effects` on an
 `<HtmlInCanvas>` wrapper does this on the GPU; the CSS version works in any
 Chromium, including headless render machines.

@@ -23,7 +23,7 @@ export const Bloom: React.FC<{ children: React.ReactNode }> = ({ children }) => 
         style={{
           mixBlendMode: "screen",
           opacity: g.strength,
-          filter: `brightness(1.1) contrast(1.9) saturate(1.4) blur(${g.radius}px)`,
+          filter: `brightness(1.1) contrast(1.9) saturate(1.15) blur(${g.radius}px)`,
         }}
       >
         {children}
