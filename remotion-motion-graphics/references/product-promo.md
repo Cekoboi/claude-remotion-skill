@@ -20,6 +20,7 @@ React. Read this before building any app, SaaS, e-commerce or product launch vid
 12. Credit card outro
 13. Sound for this style
 14. Brand and trademark rules
+15. Finishing: bloom, real motion blur, voice-over
 
 ---
 
@@ -420,3 +421,56 @@ a licensed library. Keep every hit in the shot list JSON (section 2).
   present a recreated UI or a fake order/receipt as a real one.
 - For your own product, recreate the real UI from its design tokens — same
   radii, colors and type — so the video matches what users will see.
+
+## 15. Finishing: bloom, real motion blur, voice-over
+A full recording of the reference's making shows where its polish comes from:
+the shots (S01–S10, one clip each, with shot notes as timeline markers) were
+assembled and finished in DaVinci Resolve Studio, with an AI voice-over on its
+own track. The animation is code; the *look* is a finishing pass. Without that
+pass, the same shots read flat and "web". Do the finishing in Remotion:
+
+**Bloom.** A copy of the content that keeps only the bright parts (contrast
+crushes the darks), blurred and screened over the original. Two passes: wide
+for the bloom, tight for halation around text and edges.
+```tsx
+const GLOW_PASSES = [{radius: 30, strength: 0.85}, {radius: 7, strength: 0.4}];
+export const Bloom: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill>
+    <AbsoluteFill>{children}</AbsoluteFill>
+    {GLOW_PASSES.map((g) => (
+      <AbsoluteFill key={g.radius} style={{mixBlendMode: "screen", opacity: g.strength,
+        filter: `brightness(1.1) contrast(1.9) saturate(1.4) blur(${g.radius}px)`}}>
+        {children}
+      </AbsoluteFill>
+    ))}
+  </AbsoluteFill>
+);
+```
+On Chrome 149+ with HTML-in-canvas, `glow()` from `@remotion/effects` on an
+`<HtmlInCanvas>` wrapper does this on the GPU; the CSS version works in any
+Chromium, including headless render machines.
+
+**Real motion blur.** `<CameraMotionBlur>` renders the subtree at sub-frame
+times and averages them, like a film shutter. Keep the light orb, grain and
+vignette outside it (grain would average away):
+```tsx
+<Spotlight keys={timing.spotlight} />
+<Bloom>
+  <CameraMotionBlur samples={6} shutterAngle={180}>{shots}</CameraMotionBlur>
+</Bloom>
+<Grain /><Vignette />
+```
+Cost multiplies: 6 samples × 3 bloom layers = 18 renders per frame. Any SVG
+filter ids inside (e.g. the streak filter) must be unique per copy — derive
+them from `useId()`, or every copy uses the first copy's filter.
+
+**Voice-over.** One clip per phrase, each placed by the shot list with a slot
+it must fit (`at`, `until`), the music ducked about 8 dB under every phrase.
+Any TTS works (ElevenLabs, gTTS, a recorded read); the script that generates
+the clips should fail when a phrase overruns its slot.
+
+**Or finish in an editor.** Render each shot as its own clip named by the shot
+list (`S03 - Products - CONTENT (16x9).mp4`) and assemble, grade and glow it in
+DaVinci Resolve or Premiere. Resolve's Python scripting API can build that
+timeline and its markers from the same shot list JSON.
+

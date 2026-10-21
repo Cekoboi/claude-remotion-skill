@@ -32,5 +32,13 @@
     [524, 700, 620, 1100, 0.85],
     [600, 640, 620, 1000, 0.6],
     [624, 640, 620, 900, 0]
+  ],
+  "vo": [
+    { "id": "v1", "at": 18, "until": 108, "text": "Semuanya bermula dengan sesuatu yang anda buat." },
+    { "id": "v2", "at": 140, "until": 248, "text": "Senaraikan produk anda dalam beberapa minit." },
+    { "id": "v3", "at": 262, "until": 346, "text": "Dan lihat pelawat pertama tiba." },
+    { "id": "v4", "at": 352, "until": 410, "text": "Jual apa yang anda buat," },
+    { "id": "v5", "at": 408, "until": 476, "text": "dan dengar jualan pertama anda." },
+    { "id": "v6", "at": 540, "until": 612, "text": "Kedai. Mula menjual hari ini." }
   ]
 }

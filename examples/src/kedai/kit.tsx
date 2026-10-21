@@ -1,10 +1,36 @@
 // Building blocks for the "kedai" launch video, adapted from
 // remotion-motion-graphics/references/product-promo.md.
-import React from "react";
+import React, { useId } from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { kedaiTheme as K } from "./theme";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+
+// Glow pass: copies that keep only the bright parts (contrast crushes the
+// darks), blurred and screened back over the original — what a finishing
+// app's Glow/bloom node does, in plain CSS. One wide pass for the bloom, one
+// tight pass for the halation around bright edges.
+const GLOW_PASSES = [
+  { radius: 30, strength: 0.85 },
+  { radius: 7, strength: 0.4 },
+];
+export const Bloom: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <AbsoluteFill>
+    <AbsoluteFill>{children}</AbsoluteFill>
+    {GLOW_PASSES.map((g) => (
+      <AbsoluteFill
+        key={g.radius}
+        style={{
+          mixBlendMode: "screen",
+          opacity: g.strength,
+          filter: `brightness(1.1) contrast(1.9) saturate(1.4) blur(${g.radius}px)`,
+        }}
+      >
+        {children}
+      </AbsoluteFill>
+    ))}
+  </AbsoluteFill>
+);
 
 // Every shot enters and leaves through blur, never a hard cut. Exits are faster.
 export const Shot: React.FC<{ dur: number; inF?: number; outF?: number; children: React.ReactNode }> = ({
@@ -212,6 +238,8 @@ export const StreakLine: React.FC<{ id: string; words: readonly string[]; hero: 
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  // motion blur + bloom render this several times per frame; each copy needs its own filter ids
+  const uid = `${id}${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
   const line = spring({ frame: frame - (hero + 1) * stagger - 4, fps, config: K.spring.smooth });
   return (
     <div
@@ -239,10 +267,10 @@ export const StreakLine: React.FC<{ id: string; words: readonly string[]; hero: 
               translate: `${interpolate(s, [0, 1], [80, 0])}px 0`,
               scale: `${interpolate(s, [0, 1], [1.3, 1])} 1`,
               color: isHero ? K.colors.hero : undefined,
-              filter: streak > 0.2 ? `url(#${id}-${i})` : "none",
+              filter: streak > 0.2 ? `url(#${uid}-${i})` : "none",
             }}
           >
-            <StreakFilter id={`${id}-${i}`} x={streak} />
+            <StreakFilter id={`${uid}-${i}`} x={streak} />
             {w}
             {isHero && (
               <span
