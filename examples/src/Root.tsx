@@ -16,6 +16,7 @@ import { loadNeonFonts } from "./neon/neonKit";
 import { KerjaVideo, KERJA_TOTAL_F } from "./kerja/KerjaVideo";
 import { loadKerjaFonts } from "./kerja/theme";
 import { KedaiLaunch, KEDAI_TOTAL_F } from "./kedai/KedaiLaunch";
+import { PromptToVideo, PROMPT_TOTAL_F } from "./prompt/PromptToVideo";
 import { BgMesh, Grade, Grain, Vignette } from "./components/Layers";
 import { Hook } from "./scenes/Hook";
 import { Bio } from "./scenes/Bio";
@@ -138,6 +139,14 @@ export const Root: React.FC = () => (
       id="KedaiLaunch"
       component={KedaiLaunch}
       durationInFrames={KEDAI_TOTAL_F}
+      fps={FPS}
+      width={1920}
+      height={1080}
+    />
+    <Composition
+      id="PromptToVideo"
+      component={PromptToVideo}
+      durationInFrames={PROMPT_TOTAL_F}
       fps={FPS}
       width={1920}
       height={1080}

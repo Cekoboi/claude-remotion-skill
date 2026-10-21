@@ -124,7 +124,7 @@ Claude reads the skill, applies the motion rules, renders with Remotion, extract
 
 ## Examples
 
-[`examples/`](examples/) is a Remotion project with nine finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over, and Kedai, an app-launch promo built from the product-promo patterns. Each shipped only after the render, inspect frames, fix, re-render loop.
+[`examples/`](examples/) is a Remotion project with ten finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over, Kedai, an app-launch promo built from the product-promo patterns, and Prompt to Video, an AI-demo of the skill itself. Each shipped only after the render, inspect frames, fix, re-render loop.
 
 Here is the Focus Cat promo, 15.5 seconds, with a pixel-art mascot drawn in code. Click it for the MP4 with sound:
 
@@ -150,13 +150,17 @@ And Kedai, a 23.5-second app-launch promo for an invented Malaysian shop app, bu
 
 [![Kedai app-launch promo](examples/videos/kedai-launch.gif)](examples/videos/kedai-launch.mp4)
 
+And Prompt to Video, a 15-second demo of this skill in the ai-demo style. A prompt types itself ("Buat intro logo 5 saat untuk kedai kopi saya, Kopi Senja."), Remotion code streams past, and a player swings in playing the generated logo intro; the camera whips to a second prompt and back to the night version, then the sign-off flies in along a curve. Click it for the MP4 with sound:
+
+[![Prompt to Video](examples/videos/prompt-to-video.gif)](examples/videos/prompt-to-video.mp4)
+
 The others render from source in a few minutes:
 
 ```bash
 cd examples
 npm install
 npm run audio            # synthesize the SFX and music, no asset files needed
-npm run render:selffix   # or render:kedai / render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
+npm run render:selffix   # or render:prompt / render:kedai / render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
 ```
 
 ## 🤝 Contributing

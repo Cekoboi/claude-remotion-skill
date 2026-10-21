@@ -1,6 +1,6 @@
 # Examples
 
-Nine videos built with the remotion-motion-graphics skill, in one Remotion project. Claude Code produced each one by following the skill: theme object, five-layer scene stack, spring entrances, staggered timing, and the mandatory render, extract frames, inspect, fix, re-render loop. The audio comes from the scripts in `scripts/`, which synthesize every sound as a WAV; there are no asset downloads.
+Ten videos built with the remotion-motion-graphics skill, in one Remotion project. Claude Code produced each one by following the skill: theme object, five-layer scene stack, spring entrances, staggered timing, and the mandatory render, extract frames, inspect, fix, re-render loop. The audio comes from the scripts in `scripts/`, which synthesize every sound as a WAV; there are no asset downloads.
 
 | Composition | What it is |
 |---|---|
@@ -12,6 +12,7 @@ Nine videos built with the remotion-motion-graphics skill, in one Remotion proje
 | `TanahAirku` | 25.3s 9:16 Reel: a wau bulan flies over a Kedah paddy at dawn, whip-pans to a Terengganu perahu at sunset, match-cuts through the kite's center motif into a canting-drawn batik where a bunga raya blooms, and the bloom irises open onto a waving Jalur Gemilang. Original 90 BPM zapin score (Karplus-Strong gambus, marwas, seruling, gong) |
 | `MalaysiaNeon` | 25.2s 9:16 Reel in neon: Gunung Kinabalu over a synthwave sun and grid floor, a Pohon Beringin twirled onto a wayang kulit screen, a nasi lemak sign igniting tube by tube on a brick wall, and MALAYSIA lit letter by letter with a wet-street reflection. A virtual camera adds handheld drift, kick-synced punches, decaying impact shakes with RGB split, and a move per scene (crane, dolly, orbit, push). Original 100 BPM synthwave score with a serunai-and-gendang wayang section |
 | `KedaiLaunch` | 23.5s 16:9 app-launch promo for an invented Malaysian shop app, built from `references/product-promo.md`: a logo lockup that unmasks and bookends the video, a CSS phone that tilts in and zooms through its app icon, a product list with rack focus, a live dashboard under a tilted 3D camera with a dotted Malaysia map, streak-type tagline, and the line collapsing into a pill that springs open into the first order notification. One amber orb is the only light source. Finished with real camera motion blur and a two-pass bloom, a gTTS Bahasa Melayu voice-over, and an original synthesized bed (ducked under the voice), whooshes, ticks and the order ding |
+| `PromptToVideo` | 15s 16:9 demo of this skill in the `references/ai-demo.md` style: a play mark and wordmark converge over violet silk, collapse into a pill that splits into chips, a cursor clicks "Logo", a prompt types itself with a hot tail as the camera dollies out, Remotion code streams past in perspective, and a player swings in playing the generated Kopi Senja logo intro. The camera whips down to a second prompt ("Tukar jadi tema malam.") and back to the night version, then the sign-off flies in along a curve. Motion blur, bloom, synthesized key ticks, whooshes and chimes |
 | `KerjaMakanGajiVsKerjaSendiri` | 56s 9:16 isometric explainer in Bahasa Melayu: hook, office worker (spinning clock, salary in, expenses out), online seller (orders, packing, sales, revenue graph), split-screen pros and cons, and a comment CTA. Original 120 BPM track, beat-analyzed; camera moves, whip-pans, cards, VO phrases and SFX all land on beats. gTTS Malay voice-over and captions |
 
 Preview of `FocusCatPromo`. Click it for the MP4 with sound:
@@ -23,8 +24,8 @@ Preview of `FocusCatPromo`. Click it for the MP4 with sound:
 ```bash
 npm install
 npm run audio            # writes deterministic 16-bit WAVs into public/sfx/
-npm run studio           # browse all nine in Remotion Studio
-npm run render:focuscat  # or render:kedai / render:kerja / render:neon / render:tanahairku / render:kl / render:selffix / render:codeedit / render:profile
+npm run studio           # browse all ten in Remotion Studio
+npm run render:focuscat  # or render:prompt / render:kedai / render:kerja / render:neon / render:tanahairku / render:kl / render:selffix / render:codeedit / render:profile
 ```
 
 Verify the way the skill demands, by looking at extracted stills:
@@ -46,5 +47,6 @@ npx remotion still src/index.ts SelfFix out/check_300.png --frame 300 --overwrit
 
   The camera's rhythmic zoom pulse reads the analyzed beat strengths, so strong beats move more than weak ones. `scripts/kerja/NARRATION.md` is the timed narration script, for re-recording with another voice.
 - `KedaiLaunch` keeps every shot, the focus stops, the counters, the orb's path and the voice-over slots in `src/kedai/timing.json`. `npm run kedai:vo` generates one gTTS clip per phrase and fails if one overruns its slot; `scripts/gen-kedai.mjs` derives every whoosh, tick and the ding from the same file and ducks the music under each phrase, so retiming a shot moves its sound with it. `<CameraMotionBlur>` and a CSS bloom pass make it render 18 times per frame, so it is the slowest example to render. The brand is invented, and the outro says so on screen.
+- `PromptToVideo` places every shot, the typing, both prompts, the camera keys and the silk's opacity in `src/prompt/timing.json`; `scripts/gen-prompt.mjs` puts a key tick on every third typed character and a whoosh on every camera move from the same file. The Kopi Senja intro inside the player is a real composition (`src/prompt/scenes/KopiSenja.tsx`) rendered in two looks.
 - `KLNight` self-hosts its fonts from `public/fonts/` (Unbounded, Inter, JetBrains Mono, all SIL Open Font License; `TanahAirku` adds Fraunces and `MalaysiaNeon` adds Pacifico, both OFL), so it renders without fetching from Google Fonts.
 - `src/focuscat/PixelCat.tsx` draws the mascot as a CSS pixel grid; swap the sprite strings to make your own.
