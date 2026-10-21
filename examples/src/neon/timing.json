@@ -88,5 +88,41 @@
       0,
       0
     ]
+  },
+  "camera": {
+    "kicks": [
+      [
+        2,
+        10,
+        0.9
+      ],
+      [
+        20,
+        30,
+        0.85
+      ],
+      [
+        33,
+        41.5,
+        0.9
+      ]
+    ],
+    "hits": [
+      {
+        "beat": 10,
+        "amp": 22,
+        "label": "wayang gong"
+      },
+      {
+        "beat": 33,
+        "amp": 34,
+        "label": "MALAYSIA drop"
+      }
+    ],
+    "igniteAmp": 7,
+    "cutAmp": 20,
+    "kickAmp": 5,
+    "kickZoom": 0.014,
+    "handheld": 5
   }
 }

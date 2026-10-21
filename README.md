@@ -125,7 +125,7 @@ And Tanah Airku, a 25-second 9:16 Reel. A wau bulan flies over a Kedah paddy fie
 
 [![Tanah Airku, a wau bulan's flight across Malaysia](examples/videos/tanah-airku.gif)](examples/videos/tanah-airku.mp4)
 
-And Malaysia Neon, the same country as neon signs, 25 seconds. Gunung Kinabalu's granite crown traced in cyan over a synthwave sun and grid, a Pohon Beringin twirled onto a lamp-lit wayang kulit screen, a nasi lemak sign stuttering to life tube by tube on a mamak's brick wall, and MALAYSIA lit letter by letter over a wet street. Every flicker you see has a buzz-click you hear. Click it for the MP4 with sound:
+And Malaysia Neon, the same country as neon signs, 25 seconds. Gunung Kinabalu's granite crown traced in cyan over a synthwave sun and grid, a Pohon Beringin twirled onto a lamp-lit wayang kulit screen, a nasi lemak sign stuttering to life tube by tube on a mamak's brick wall, and MALAYSIA lit letter by letter over a wet street. Every flicker you see has a buzz-click you hear, and a virtual camera shakes on every kick, ignition and power cut, with an RGB split on the big hits. Click it for the MP4 with sound:
 
 [![Malaysia Neon](examples/videos/malaysia-neon.gif)](examples/videos/malaysia-neon.mp4)
 

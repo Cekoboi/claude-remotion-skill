@@ -1,5 +1,6 @@
 import React from "react";
-import { AbsoluteFill, Audio, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { cameraAt, sceneMove } from "./camera";
 import { Grain, Vignette } from "../components/Layers";
 import { beatFrame, neon, NEON_TOTAL_BEATS, neonTextStyle, SceneKey, sceneFrames, tube } from "./neonKit";
 import { Kinabalu } from "./scenes/Kinabalu";
@@ -67,46 +68,87 @@ const Scanlines: React.FC = () => (
   />
 );
 
+// Everything inside moves with the camera; overlays outside it stay locked to the screen.
+// Big impacts also smear: RGB channels split apart and the frame blurs, scaled by shake energy.
+const OVERSCAN = 1.06;
+const Camera: React.FC<{ scene: SceneKey; f: number; dur: number; children: React.ReactNode }> = ({ scene, f, dur, children }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const cam = cameraAt(frame, fps);
+  const move = sceneMove(scene, f, dur);
+  const split = Math.min(14, cam.energy * 0.45);
+  const blur = Math.min(3, cam.energy * 0.09);
+  const filters = [split > 1 ? "url(#rgb-split)" : "", blur > 0.4 ? `blur(${blur.toFixed(2)}px)` : ""].filter(Boolean).join(" ");
+  return (
+    <AbsoluteFill
+      style={{
+        transform: `translate(${move.x + cam.x}px, ${move.y + cam.y}px) rotate(${move.rot + cam.rot}deg) scale(${OVERSCAN * move.scale * (1 + cam.zoom)})`,
+        filter: filters || undefined,
+      }}
+    >
+      {split > 1 && (
+        <svg width={0} height={0} style={{ position: "absolute" }}>
+          <filter id="rgb-split" x="-5%" y="-5%" width="110%" height="110%" colorInterpolationFilters="sRGB">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+            <feOffset in="r" dx={split} dy={split * 0.3} result="ro" />
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
+            <feOffset in="b" dx={-split} dy={-split * 0.3} result="bo" />
+            <feBlend in="ro" in2="g" mode="screen" result="rg" />
+            <feBlend in="rg" in2="bo" mode="screen" />
+          </filter>
+        </svg>
+      )}
+      {children}
+    </AbsoluteFill>
+  );
+};
+
 export const MalaysiaNeon: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const S = sceneFrames(fps);
   const local = (k: SceneKey) => frame - S[k].from;
   const active = (k: SceneKey) => frame >= S[k].from && frame < S[k].from + S[k].dur;
-  // each scene glides in a touch as it powers up
-  const drift = (k: SceneKey) =>
-    interpolate(local(k), [0, S[k].dur], [1.03, 1], { easing: neon.ease.out, extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   return (
     <AbsoluteFill style={{ background: C.bg }}>
       <Audio src={staticFile("sfx/neon-track.wav")} />
 
       {active("kinabalu") && (
-        <AbsoluteFill style={{ transform: `scale(${drift("kinabalu")})` }}>
-          <Kinabalu f={local("kinabalu")} dur={S.kinabalu.dur} fps={fps} />
-          <NeonTitle scene="kinabalu" f={local("kinabalu")} dur={S.kinabalu.dur} fps={fps} color={C.magenta} top={250} />
+        <>
+          <Camera scene="kinabalu" f={local("kinabalu")} dur={S.kinabalu.dur}>
+            <Kinabalu f={local("kinabalu")} dur={S.kinabalu.dur} fps={fps} />
+            <NeonTitle scene="kinabalu" f={local("kinabalu")} dur={S.kinabalu.dur} fps={fps} color={C.magenta} top={250} />
+          </Camera>
           <PowerCut f={local("kinabalu")} dur={S.kinabalu.dur} />
-        </AbsoluteFill>
+        </>
       )}
       {active("wayang") && (
-        <AbsoluteFill style={{ transform: `scale(${drift("wayang")})` }}>
-          <Wayang f={local("wayang")} dur={S.wayang.dur} fps={fps} />
-          <NeonTitle scene="wayang" f={local("wayang")} dur={S.wayang.dur} fps={fps} color={C.amber} top={1450} />
+        <>
+          <Camera scene="wayang" f={local("wayang")} dur={S.wayang.dur}>
+            <Wayang f={local("wayang")} dur={S.wayang.dur} fps={fps} />
+            <NeonTitle scene="wayang" f={local("wayang")} dur={S.wayang.dur} fps={fps} color={C.amber} top={1450} />
+          </Camera>
           <PowerCut f={local("wayang")} dur={S.wayang.dur} />
-        </AbsoluteFill>
+        </>
       )}
       {active("nasi") && (
-        <AbsoluteFill style={{ transform: `scale(${drift("nasi")})` }}>
-          <NasiLemak f={local("nasi")} dur={S.nasi.dur} fps={fps} />
-          <NeonTitle scene="nasi" f={local("nasi")} dur={S.nasi.dur} fps={fps} color={C.pink} top={300} />
+        <>
+          <Camera scene="nasi" f={local("nasi")} dur={S.nasi.dur}>
+            <NasiLemak f={local("nasi")} dur={S.nasi.dur} fps={fps} />
+            <NeonTitle scene="nasi" f={local("nasi")} dur={S.nasi.dur} fps={fps} color={C.pink} top={300} />
+          </Camera>
           <PowerCut f={local("nasi")} dur={S.nasi.dur} />
-        </AbsoluteFill>
+        </>
       )}
       {active("malaysia") && (
-        <AbsoluteFill style={{ transform: `scale(${drift("malaysia")})` }}>
-          <MalaysiaSign f={local("malaysia")} dur={S.malaysia.dur} fps={fps} />
+        <>
+          <Camera scene="malaysia" f={local("malaysia")} dur={S.malaysia.dur}>
+            <MalaysiaSign f={local("malaysia")} dur={S.malaysia.dur} fps={fps} />
+          </Camera>
           <PowerCut f={local("malaysia")} dur={S.malaysia.dur} />
-        </AbsoluteFill>
+        </>
       )}
 
       <Scanlines />

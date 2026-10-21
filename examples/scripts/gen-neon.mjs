@@ -184,7 +184,6 @@ for (const k of ORDER) {
     pluck(b(beat), root + arp[i % arp.length], 0.08, i % 2 ? 0.35 : -0.35);
   }
   for (let beat = s + 2; beat < s + 10; beat++) {
-    kick(b(beat));
     if ((beat - s) % 2 === 1) snare(b(beat));
     hat(b(beat + 0.5));
   }
@@ -218,7 +217,6 @@ for (const k of ORDER) {
   const prog = [[0, Dm], [2, Gm], [4, Bb], [6, A], [8, Dm]];
   for (const [at, ch] of prog) pad(b(s + at), ch.map((m) => m + 12), b(2), 0.03);
   for (let beat = s; beat < s + 10; beat++) {
-    kick(b(beat), 0.85);
     if ((beat - s) % 2 === 1) snare(b(beat), 0.38);
     for (let q = 0; q < 4; q++) hat(b(beat + q / 4), q === 2 ? 0.08 : 0.04);
   }
@@ -245,7 +243,6 @@ for (const k of ORDER) {
   const prog = [[3, Dm], [5, Bb], [7, Cc], [9, Dm]];
   for (const [at, ch] of prog) pad(b(s + at), ch.map((m) => m + 12), b(at === 9 ? 3 : 2), 0.04);
   for (let beat = s + 3; beat < s + 11.5; beat++) {
-    kick(b(beat));
     if ((beat - s) % 2 === 0) snare(b(beat));
     hat(b(beat + 0.5), 0.08);
   }
@@ -262,6 +259,11 @@ for (const k of ORDER) {
       return saw(ph) * Math.min(1, ts * 30) * Math.min(1, (1 - p) * 6) * 0.1;
     }, 0.1);
   }
+}
+
+// kicks: one list drives both these hits and the video's camera punches
+for (const [from, to, vel] of T.camera.kicks) {
+  for (let beat = from; beat < to; beat++) kick(b(beat), vel);
 }
 
 // ---------- master ----------
