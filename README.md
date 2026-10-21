@@ -58,7 +58,9 @@ remotion-motion-graphics/
 ├── references/
 │   ├── motion-patterns.md      # 17 copy-paste components (reveals, grade, grain,
 │   │                           #   Ken Burns, counters, transitions, captions...)
-│   └── design-rules.md         # Palettes, typography, pacing, sound, checklist
+│   ├── design-rules.md         # Palettes, typography, pacing, sound, checklist
+│   └── product-promo.md        # App/SaaS launch patterns: device mockup, UI rack
+│                               #   focus, 3D camera, shape morphs, logo bookend
 └── assets/
     └── theme.ts                # Theme template (colors, easings, spring presets)
 ```
@@ -77,6 +79,13 @@ cp -r claude-remotion-skill/remotion-motion-graphics ~/.claude/skills/
 git clone https://github.com/haidrrrry/claude-remotion-skill.git
 mkdir -p .claude/skills
 cp -r claude-remotion-skill/remotion-motion-graphics .claude/skills/
+```
+
+**Pair it with the official Remotion skills** (API reference for motion blur,
+transitions, 3D, light leaks, captions, rendering). This repo already ships them
+in `.claude/skills/`, pinned in `skills-lock.json`; to add them to your own project:
+```bash
+npx skills add remotion-dev/skills -a claude-code -s '*' -y --copy
 ```
 
 **Claude Desktop / Claude.ai:** upload `remotion-motion-graphics.skill` in **Settings → Capabilities → Skills**.
