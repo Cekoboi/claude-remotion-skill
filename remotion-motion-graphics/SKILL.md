@@ -59,7 +59,9 @@ typography, color palettes, and sound design rules, read
 video (device mockup, recreated UI, 3D camera, shape morphs), also read
 `references/product-promo.md`. When one glowing line should carry the story
 (drawn paths, branches, waveforms, streak counters, leaderboards), also read
-`references/light-path.md`.
+`references/light-path.md`. For an AI or developer-tool demo (a prompt typed,
+code streaming, the result appearing and then changing), also read
+`references/ai-demo.md`.
 
 Scene rhythm: HIT → hold (15–20 still frames) → build → HIT. Something must move
 in the first 15 frames. Never >90 frames without a new visual element.
@@ -137,6 +139,10 @@ speech, see the captions section of `references/motion-patterns.md`.
   `@remotion/paths`: comet trail, line → waveform, branch split with node
   ignition, segmented underline callback, speed-line burst, hop with echo,
   flying word tiles, odometer counter, leaderboard climb.
+- `references/ai-demo.md` — "type a prompt, watch it build": silk gradient,
+  tracking reveal, pill splitting into chips, clicking cursor, typing with a
+  hot tail + dolly out, 3D code stream, one-canvas camera with whips, off-camera
+  state change, text flying in along a path, stretch exit.
 - `assets/theme.ts` — the theme template to copy into every project.
 
 ## Common failure modes to actively avoid

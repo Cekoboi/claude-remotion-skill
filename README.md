@@ -61,8 +61,10 @@ remotion-motion-graphics/
 │   ├── design-rules.md         # Palettes, typography, pacing, sound, checklist
 │   ├── product-promo.md        # App/SaaS launch patterns: device mockup, UI rack
 │   │                           #   focus, 3D camera, shape morphs, logo bookend
-│   └── light-path.md           # One glowing line as the story: path drawing,
-│                               #   branches, waveform, odometer, leaderboard climb
+│   ├── light-path.md           # One glowing line as the story: path drawing,
+│   │                           #   branches, waveform, odometer, leaderboard climb
+│   └── ai-demo.md              # Prompt → code → result demos: typing, code stream,
+│                               #   one-canvas camera, chips, text on a path
 └── assets/
     └── theme.ts                # Theme template (colors, easings, spring presets)
 ```
