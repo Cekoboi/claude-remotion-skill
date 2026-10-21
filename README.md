@@ -59,8 +59,10 @@ remotion-motion-graphics/
 │   ├── motion-patterns.md      # 17 copy-paste components (reveals, grade, grain,
 │   │                           #   Ken Burns, counters, transitions, captions...)
 │   ├── design-rules.md         # Palettes, typography, pacing, sound, checklist
-│   └── product-promo.md        # App/SaaS launch patterns: device mockup, UI rack
-│                               #   focus, 3D camera, shape morphs, logo bookend
+│   ├── product-promo.md        # App/SaaS launch patterns: device mockup, UI rack
+│   │                           #   focus, 3D camera, shape morphs, logo bookend
+│   └── light-path.md           # One glowing line as the story: path drawing,
+│                               #   branches, waveform, odometer, leaderboard climb
 └── assets/
     └── theme.ts                # Theme template (colors, easings, spring presets)
 ```
