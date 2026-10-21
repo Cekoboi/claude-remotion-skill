@@ -63,8 +63,10 @@ remotion-motion-graphics/
 │   │                           #   focus, 3D camera, shape morphs, logo bookend
 │   ├── light-path.md           # One glowing line as the story: path drawing,
 │   │                           #   branches, waveform, odometer, leaderboard climb
-│   └── ai-demo.md              # Prompt → code → result demos: typing, code stream,
-│                               #   one-canvas camera, chips, text on a path
+│   ├── ai-demo.md              # Prompt → code → result demos: typing, code stream,
+│   │                           #   one-canvas camera, chips, text on a path
+│   └── customer-journey.md     # Logo → buy → delivery map → doorstep: sparks,
+│                               #   card orbit, isometric city, CSS 3D box
 └── assets/
     └── theme.ts                # Theme template (colors, easings, spring presets)
 ```
