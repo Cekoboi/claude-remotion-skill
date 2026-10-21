@@ -138,7 +138,7 @@ const riser = (endFrame, dur = 0.5, vel = 0.2) => {
 const typing = (from, start, cps, text) => {
   for (let i = 0; i < text.length; i += 3) {
     const f = from + start + Math.ceil(((i + 1) * FPS) / cps);
-    tick(f, 0.07, 1700 + (i % 7) * 90, ((i % 5) - 2) * 0.12);
+    tick(f, 0.13, 1700 + (i % 7) * 90, ((i % 5) - 2) * 0.12);
   }
 };
 
