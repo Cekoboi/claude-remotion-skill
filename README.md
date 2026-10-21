@@ -120,7 +120,7 @@ Claude reads the skill, applies the motion rules, renders with Remotion, extract
 
 ## Examples
 
-[`examples/`](examples/) is a Remotion project with eight finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, and a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over. Each shipped only after the render, inspect frames, fix, re-render loop.
+[`examples/`](examples/) is a Remotion project with nine finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over, and Kedai, an app-launch promo built from the product-promo patterns. Each shipped only after the render, inspect frames, fix, re-render loop.
 
 Here is the Focus Cat promo, 15.5 seconds, with a pixel-art mascot drawn in code. Click it for the MP4 with sound:
 
@@ -142,13 +142,17 @@ And Kerja Makan Gaji vs Kerja Sendiri, a 56-second isometric explainer in Bahasa
 
 [![Kerja Makan Gaji vs Kerja Sendiri](examples/videos/kerja-makan-gaji-vs-kerja-sendiri.gif)](examples/videos/kerja-makan-gaji-vs-kerja-sendiri.mp4)
 
+And Kedai, a 23.5-second app-launch promo for an invented Malaysian shop app, built from `references/product-promo.md`. One amber light travels through the whole video: a logo lockup unmasks, a phone tilts in and the camera zooms through its app icon, focus racks down a product list, a live dashboard cascades in under a tilted camera with KL pulsing on a dotted map, and "dan dengar jualan pertama anda" collapses into a glowing pill that springs open into the first order. Click it for the MP4 with sound:
+
+[![Kedai app-launch promo](examples/videos/kedai-launch.gif)](examples/videos/kedai-launch.mp4)
+
 The others render from source in a few minutes:
 
 ```bash
 cd examples
 npm install
 npm run audio            # synthesize the SFX and music, no asset files needed
-npm run render:selffix   # or render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
+npm run render:selffix   # or render:kedai / render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
 ```
 
 ## 🤝 Contributing
