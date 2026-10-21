@@ -11,6 +11,8 @@ import { CodeEdit, CE_TOTAL_F } from "./codeedit/CodeEdit";
 import { KLNight, KL_TOTAL_F, loadKLFonts } from "./kl/KLNight";
 import { TanahAirku, MY_TOTAL_F } from "./malaysia/TanahAirku";
 import { loadMyFonts } from "./malaysia/theme5";
+import { MalaysiaNeon, NEON_TOTAL_F } from "./neon/MalaysiaNeon";
+import { loadNeonFonts } from "./neon/neonKit";
 import { BgMesh, Grade, Grain, Vignette } from "./components/Layers";
 import { Hook } from "./scenes/Hook";
 import { Bio } from "./scenes/Bio";
@@ -23,6 +25,7 @@ loadMono();
 loadSerif();
 loadKLFonts();
 loadMyFonts();
+loadNeonFonts();
 
 const FPS = 30;
 
@@ -107,6 +110,14 @@ export const Root: React.FC = () => (
       id="TanahAirku"
       component={TanahAirku}
       durationInFrames={MY_TOTAL_F}
+      fps={FPS}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="MalaysiaNeon"
+      component={MalaysiaNeon}
+      durationInFrames={NEON_TOTAL_F}
       fps={FPS}
       width={1080}
       height={1920}

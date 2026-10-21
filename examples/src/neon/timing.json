@@ -1,0 +1,92 @@
+{
+  "fps": 30,
+  "bpm": 100,
+  "scenes": {
+    "kinabalu": 10,
+    "wayang": 10,
+    "nasi": 10,
+    "malaysia": 12
+  },
+  "titles": {
+    "kinabalu": {
+      "title": "Gunung Kinabalu",
+      "place": "SABAH"
+    },
+    "wayang": {
+      "title": "Wayang Kulit",
+      "place": "KELANTAN"
+    },
+    "nasi": {
+      "title": "Nasi Lemak",
+      "place": "HIDANGAN KEBANGSAAN"
+    },
+    "malaysia": {
+      "title": "MALAYSIA",
+      "place": "TANAH AIRKU"
+    }
+  },
+  "ignite": {
+    "kinabalu": {
+      "grid": 0.25,
+      "sun": 0.75,
+      "mountain": 1.25,
+      "title": 2.5
+    },
+    "wayang": {
+      "screen": 0.25,
+      "lamp": 0.75,
+      "pohon": 1.25,
+      "title": 3.25
+    },
+    "nasi": {
+      "plate": 0.25,
+      "leaf": 0.75,
+      "title": 1.25,
+      "rice": 2.0,
+      "egg": 2.5,
+      "sambal": 3.0,
+      "cucumber": 3.25,
+      "bilis": 3.5,
+      "kacang": 3.75,
+      "steam": 4.25,
+      "buka": 5.0
+    },
+    "malaysia": {
+      "star": 0.5,
+      "letters": 1.5,
+      "letterGap": 0.2,
+      "rule": 3.75,
+      "tag": 4.25
+    }
+  },
+  "flicker": {
+    "ignite": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    "die": [
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ]
+  }
+}
