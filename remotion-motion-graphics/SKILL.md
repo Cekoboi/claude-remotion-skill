@@ -55,7 +55,9 @@ Read `references/motion-patterns.md` for the reusable component implementations
 (BgMesh, Grade, Grain, Vignette, KenBurns, WordReveal, Stagger, Counter, Spark,
 transitions, parallax). Compose scenes from those patterns. For pacing, rhythm,
 typography, color palettes, and sound design rules, read
-`references/design-rules.md`.
+`references/design-rules.md`. For an app, SaaS, e-commerce or product launch
+video (device mockup, recreated UI, 3D camera, shape morphs), also read
+`references/product-promo.md`.
 
 Scene rhythm: HIT → hold (15–20 still frames) → build → HIT. Something must move
 in the first 15 frames. Never >90 frames without a new visual element.
@@ -125,6 +127,10 @@ speech, see the captions section of `references/motion-patterns.md`.
 - `references/design-rules.md` — palettes, typography rules, scene architecture,
   sound design, pre-delivery checklist. Read before designing scenes and before
   final delivery.
+- `references/product-promo.md` — app/SaaS launch patterns: shot list, moving
+  spotlight orb, logo lockup reveal, CSS device mockup, screen takeover, rack
+  focus over recreated UI, 3D camera, velocity blur, streak type, pill →
+  notification morph. Read before any product or app promo.
 - `assets/theme.ts` — the theme template to copy into every project.
 
 ## Common failure modes to actively avoid

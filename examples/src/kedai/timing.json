@@ -1,0 +1,36 @@
+{
+  "fps": 30,
+  "bpm": 100,
+  "total": 704,
+  "shots": {
+    "logo": { "from": 0, "dur": 54, "note": "icon alone in a ring -> glides left as the wordmark unmasks -> drifts up" },
+    "device": { "from": 48, "dur": 76, "note": "phone tilts in: off -> lock 9:41 -> home grid -> zoom through the kedai icon" },
+    "products": { "from": 112, "dur": 148, "note": "skeleton list fills, focus racks row to row, camera follows" },
+    "live": { "from": 252, "dur": 104, "note": "dashboard cards cascade under a tilted camera, KL dot pulses, counters tick" },
+    "line1": { "from": 350, "dur": 66, "note": "Jual apa yang anda buat" },
+    "line2": { "from": 410, "dur": 66, "note": "dan dengar jualan pertama anda -> collapses into a bar" },
+    "payoff": { "from": 470, "dur": 60, "note": "bar -> glowing pill -> order notification (ding)" },
+    "outro": { "from": 524, "dur": 96, "note": "same logo lockup as the intro + spec disclaimer" },
+    "credit": { "from": 614, "dur": 90, "note": "white light streak -> credit" }
+  },
+  "device": { "lock": 8, "home": 34, "takeover": 52, "takeoverDur": 14 },
+  "products": { "fill": 16, "focus": [[40, 0], [68, 1], [96, 2], [124, 0]] },
+  "live": { "cardStagger": 5, "visitor": 40, "cart": 62 },
+  "lines": {
+    "line1": { "words": ["Jual", "apa", "yang", "anda", "buat"], "hero": 4, "stagger": 5 },
+    "line2": { "words": ["dan", "dengar", "jualan", "pertama", "anda"], "hero": 3, "stagger": 6, "collapse": 48 }
+  },
+  "payoff": { "open": 12 },
+  "spotlight": [
+    [0, 960, 700, 800, 0],
+    [14, 960, 640, 900, 0.85],
+    [48, 960, 600, 1000, 0.95],
+    [112, 960, 560, 1250, 0.75],
+    [252, 900, 640, 1150, 0.8],
+    [350, 900, 520, 720, 0.9],
+    [470, 880, 580, 820, 0.95],
+    [524, 700, 620, 1100, 0.85],
+    [600, 640, 620, 1000, 0.6],
+    [624, 640, 620, 900, 0]
+  ]
+}
