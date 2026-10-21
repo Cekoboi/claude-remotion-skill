@@ -8,6 +8,7 @@ import { FocusCatPromo, FTOTAL_S } from "./focuscat/FocusCat";
 import { SkillPromo, TOTAL_S as SKILL_TOTAL_S } from "./skill/SkillPromo";
 import { SelfFix, SELF_TOTAL_F } from "./selffix/SelfFix";
 import { CodeEdit, CE_TOTAL_F } from "./codeedit/CodeEdit";
+import { KLNight, KL_TOTAL_F, loadKLFonts } from "./kl/KLNight";
 import { BgMesh, Grade, Grain, Vignette } from "./components/Layers";
 import { Hook } from "./scenes/Hook";
 import { Bio } from "./scenes/Bio";
@@ -18,6 +19,7 @@ loadDisplay();
 loadBody();
 loadMono();
 loadSerif();
+loadKLFonts();
 
 const FPS = 30;
 
@@ -89,6 +91,14 @@ export const Root: React.FC = () => (
       fps={FPS}
       width={1920}
       height={1080}
+    />
+    <Composition
+      id="KLNight"
+      component={KLNight}
+      durationInFrames={KL_TOTAL_F}
+      fps={FPS}
+      width={1080}
+      height={1920}
     />
     <Composition
       id="FocusCatPromo"

@@ -111,19 +111,23 @@ Claude reads the skill, applies the motion rules, renders with Remotion, extract
 
 ## Examples
 
-[`examples/`](examples/) is a Remotion project with four finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, and a beat-synced code edit with a synthesized 120 BPM track. Each shipped only after the render, inspect frames, fix, re-render loop.
+[`examples/`](examples/) is a Remotion project with five finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, and KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG. Each shipped only after the render, inspect frames, fix, re-render loop.
 
 Here is the Focus Cat promo, 15.5 seconds, with a pixel-art mascot drawn in code. Click it for the MP4 with sound:
 
 [![Focus Cat promo, made with this skill](examples/videos/focus-cat.gif)](https://github.com/haidrrrry/claude-remotion-skill/raw/main/examples/videos/focus-cat-promo.mp4)
 
-The other three render from source in a few minutes:
+And KL Night, a 20-second 9:16 Reel. The Petronas Towers and Menara KL draw themselves line by line, 388 windows light up while a counter tracks them, and the fireworks run on drag-and-gravity physics, ending in a heart. There are no image, video, or audio files: the 100 BPM gamelan-flavored track is synthesized, and each firework is panned to where it bursts. Click it for the MP4 with sound:
+
+[![KL Night, a Kuala Lumpur skyline Reel drawn in code](examples/videos/kl-night.gif)](examples/videos/kl-night.mp4)
+
+The others render from source in a few minutes:
 
 ```bash
 cd examples
 npm install
 npm run audio            # synthesize the SFX and music, no asset files needed
-npm run render:selffix   # or render:codeedit / render:profile / render:focuscat
+npm run render:selffix   # or render:kl / render:codeedit / render:profile / render:focuscat
 ```
 
 ## 🤝 Contributing
