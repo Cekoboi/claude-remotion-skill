@@ -1,0 +1,24 @@
+{
+  "fps": 30,
+  "bpm": 100,
+  "total": 640,
+  "shots": {
+    "logo": { "from": 0, "dur": 66, "note": "spark comet draws the route mark; the wordmark unmasks behind its head" },
+    "phone": { "from": 60, "dur": 150, "note": "phone rises, 'kuih raya' types, results burst into an orbit and fall back, push into a product" },
+    "product": { "from": 204, "dur": 96, "note": "product page; Beli Sekarang fills like a hold, becomes the order toast; the route whips out" },
+    "city": { "from": 296, "dur": 104, "note": "isometric city; the route draws street by street, camera follows the rider's pin" },
+    "door": { "from": 396, "dur": 90, "note": "pin flashes into a box at the door; a ring draws the mark on it; Delivered notification" },
+    "line1": { "from": 482, "dur": 54, "note": "Semua yang anda suka. — light sweep, route underline" },
+    "line2": { "from": 532, "dur": 56, "note": "Dari Perlis ke Sabah. — arrow from the P to the S" },
+    "outro": { "from": 584, "dur": 56, "note": "logo bookend + spec disclaimer" }
+  },
+  "logo": { "comet": 4, "draw": 24 },
+  "phone": { "rise": 0, "type": 24, "cps": 18, "query": "kuih raya", "suggest": 38, "grid": 52, "open": 68, "close": 104, "push": 128 },
+  "product": { "hold": 40, "holdDur": 24, "whip": 84 },
+  "city": { "route": [[1, 2], [4, 2], [4, 5], [7, 5], [7, 8], [10, 8]], "start": 6, "dur": 80 },
+  "door": { "box": 4, "ring": 10, "mark": 22, "notify": 52 },
+  "line1": { "sweep": 6, "under": 22 },
+  "line2": { "arrow": 14 },
+  "outro": { "comet": 2, "draw": 18, "disclaimer": 26 },
+  "glow": [[0, 960, 520, 900, 0.7], [60, 960, 600, 1100, 0.8], [210, 760, 540, 1100, 0.7], [300, 960, 540, 800, 0.25], [396, 960, 600, 1000, 0.85], [490, 960, 560, 900, 0.6], [640, 960, 560, 900, 0.5]]
+}

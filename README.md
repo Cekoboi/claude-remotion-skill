@@ -126,7 +126,7 @@ Claude reads the skill, applies the motion rules, renders with Remotion, extract
 
 ## Examples
 
-[`examples/`](examples/) is a Remotion project with ten finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over, Kedai, an app-launch promo built from the product-promo patterns, and Prompt to Video, an AI-demo of the skill itself. Each shipped only after the render, inspect frames, fix, re-render loop.
+[`examples/`](examples/) is a Remotion project with eleven finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over, Kedai, an app-launch promo built from the product-promo patterns, Prompt to Video, an AI-demo of the skill itself, and Laju, a logo-to-doorstep delivery promo. Each shipped only after the render, inspect frames, fix, re-render loop.
 
 Here is the Focus Cat promo, 15.5 seconds, with a pixel-art mascot drawn in code. Click it for the MP4 with sound:
 
@@ -156,13 +156,17 @@ And Prompt to Video, a 15-second demo of this skill in the ai-demo style. A prom
 
 [![Prompt to Video](examples/videos/prompt-to-video.gif)](examples/videos/prompt-to-video.mp4)
 
+And Laju, a 21-second delivery promo for an invented marketplace: a spark comet draws the route mark, product cards orbit a phone, "Beli Sekarang" fills into an order, the route crosses an isometric city, the mark is drawn on a box at the door, and "Dari Perlis ke Sabah." closes with an arrow from the P to the S. Click it for the MP4 with sound:
+
+[![Laju delivery promo](examples/videos/laju-journey.gif)](examples/videos/laju-journey.mp4)
+
 The others render from source in a few minutes:
 
 ```bash
 cd examples
 npm install
 npm run audio            # synthesize the SFX and music, no asset files needed
-npm run render:selffix   # or render:prompt / render:kedai / render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
+npm run render:selffix   # or render:laju / render:prompt / render:kedai / render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
 ```
 
 ## 🤝 Contributing
