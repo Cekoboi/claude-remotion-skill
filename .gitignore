@@ -2,4 +2,3 @@
 node_modules/
 examples/out/
 examples/public/sfx/
-examples/package-lock.json
