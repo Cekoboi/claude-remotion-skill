@@ -1,0 +1,30 @@
+{
+  "voice": "gTTS (Google Translate TTS), lang ms, sped up 1.12x with ffmpeg atempo",
+  "scenes": [
+    { "id": "hook", "phrases": [
+      { "id": "h1", "text": "Kerja makan gaji..." },
+      { "id": "h2", "text": "atau kerja sendiri?" },
+      { "id": "h3", "text": "Mana satu lebih berbaloi?" }
+    ]},
+    { "id": "gaji", "phrases": [
+      { "id": "g1", "text": "Kerja makan gaji." },
+      { "id": "g2", "text": "Masuk pukul sembilan, balik pukul enam." },
+      { "id": "g3", "text": "Hujung bulan, gaji masuk. Stabil dan terjamin." },
+      { "id": "g4", "text": "Tapi sewa, kereta, dan bil, semua tolak dulu." }
+    ]},
+    { "id": "sendiri", "phrases": [
+      { "id": "s1", "text": "Kerja sendiri pula, kau bos untuk diri sendiri." },
+      { "id": "s2", "text": "Order masuk, bungkus, hantar." },
+      { "id": "s3", "text": "Rezeki ikut usaha." },
+      { "id": "s4", "text": "Boleh naik mendadak, tapi tiada gaji tetap." }
+    ]},
+    { "id": "banding", "phrases": [
+      { "id": "c1", "text": "Makan gaji: stabil, ada KWSP dan cuti, tapi pendapatan terhad." },
+      { "id": "c2", "text": "Kerja sendiri: masa fleksibel, potensi tanpa had, tapi risiko lebih tinggi." }
+    ]},
+    { "id": "ending", "phrases": [
+      { "id": "e1", "text": "Jadi, kau pilih yang mana?" },
+      { "id": "e2", "text": "Komen di bawah!" }
+    ]}
+  ]
+}

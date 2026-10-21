@@ -2,7 +2,7 @@
   "name": "remotion-skill-examples",
   "version": "1.0.0",
   "private": true,
-  "description": "Seven finished compositions built with the remotion-motion-graphics skill",
+  "description": "Eight finished compositions built with the remotion-motion-graphics skill",
   "scripts": {
     "audio": "node scripts/gen-sfx.mjs && node scripts/gen-track.mjs && node scripts/gen-kl.mjs && node scripts/gen-my.mjs && node scripts/gen-neon.mjs",
     "studio": "remotion studio src/index.ts",
@@ -12,7 +12,11 @@
     "render:codeedit": "remotion render src/index.ts CodeEdit out/code-edit.mp4 --codec h264 --crf 16",
     "render:kl": "remotion render src/index.ts KLNight out/kl-night.mp4 --codec h264 --crf 16",
     "render:tanahairku": "remotion render src/index.ts TanahAirku out/tanah-airku.mp4 --codec h264 --crf 16",
-    "render:neon": "remotion render src/index.ts MalaysiaNeon out/malaysia-neon.mp4 --codec h264 --crf 16"
+    "render:neon": "remotion render src/index.ts MalaysiaNeon out/malaysia-neon.mp4 --codec h264 --crf 16",
+    "kerja:vo": "python3 scripts/kerja/gen-vo.py",
+    "kerja:timing": "node scripts/kerja/build-timing.mjs",
+    "kerja:audio": "node scripts/kerja/gen-music.mjs && node scripts/kerja/analyze-beats.mjs",
+    "render:kerja": "remotion render src/index.ts KerjaMakanGajiVsKerjaSendiri out/kerja-makan-gaji-vs-kerja-sendiri.mp4 --codec h264 --crf 18"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",

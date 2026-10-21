@@ -111,7 +111,7 @@ Claude reads the skill, applies the motion rules, renders with Remotion, extract
 
 ## Examples
 
-[`examples/`](examples/) is a Remotion project with seven finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, and Malaysia Neon, the same country as flickering neon signs. Each shipped only after the render, inspect frames, fix, re-render loop.
+[`examples/`](examples/) is a Remotion project with eight finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, Tanah Airku, a wau bulan's flight across Malaysia, Malaysia Neon, the same country as flickering neon signs, and a 56-second isometric explainer, Kerja Makan Gaji vs Kerja Sendiri, with beat-analyzed music and a Bahasa Melayu voice-over. Each shipped only after the render, inspect frames, fix, re-render loop.
 
 Here is the Focus Cat promo, 15.5 seconds, with a pixel-art mascot drawn in code. Click it for the MP4 with sound:
 
@@ -129,13 +129,17 @@ And Malaysia Neon, the same country as neon signs, 25 seconds. Gunung Kinabalu's
 
 [![Malaysia Neon](examples/videos/malaysia-neon.gif)](examples/videos/malaysia-neon.mp4)
 
+And Kerja Makan Gaji vs Kerja Sendiri, a 56-second isometric explainer in Bahasa Melayu. An office worker watches the clock spin from 9 to 6 and the salary drain into rent, car and bills. An online seller packs orders while sales notifications land and a revenue graph spikes, then drops. A split-screen weighs both sides, and the video ends on "Kau pilih yang mana? Komen di bawah." The music is an original 120 BPM track. A blind beat analysis (onset autocorrelation plus chroma downbeats) confirms the grid to within 7.5 ms, and every camera move, whip-pan, card, voice-over phrase and SFX lands on a beat. Click it for the MP4 with sound:
+
+[![Kerja Makan Gaji vs Kerja Sendiri](examples/videos/kerja-makan-gaji-vs-kerja-sendiri.gif)](examples/videos/kerja-makan-gaji-vs-kerja-sendiri.mp4)
+
 The others render from source in a few minutes:
 
 ```bash
 cd examples
 npm install
 npm run audio            # synthesize the SFX and music, no asset files needed
-npm run render:selffix   # or render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
+npm run render:selffix   # or render:kerja / render:neon / render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
 ```
 
 ## 🤝 Contributing

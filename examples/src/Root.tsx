@@ -13,6 +13,8 @@ import { TanahAirku, MY_TOTAL_F } from "./malaysia/TanahAirku";
 import { loadMyFonts } from "./malaysia/theme5";
 import { MalaysiaNeon, NEON_TOTAL_F } from "./neon/MalaysiaNeon";
 import { loadNeonFonts } from "./neon/neonKit";
+import { KerjaVideo, KERJA_TOTAL_F } from "./kerja/KerjaVideo";
+import { loadKerjaFonts } from "./kerja/theme";
 import { BgMesh, Grade, Grain, Vignette } from "./components/Layers";
 import { Hook } from "./scenes/Hook";
 import { Bio } from "./scenes/Bio";
@@ -26,6 +28,7 @@ loadSerif();
 loadKLFonts();
 loadMyFonts();
 loadNeonFonts();
+loadKerjaFonts();
 
 const FPS = 30;
 
@@ -118,6 +121,14 @@ export const Root: React.FC = () => (
       id="MalaysiaNeon"
       component={MalaysiaNeon}
       durationInFrames={NEON_TOTAL_F}
+      fps={FPS}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="KerjaMakanGajiVsKerjaSendiri"
+      component={KerjaVideo}
+      durationInFrames={KERJA_TOTAL_F}
       fps={FPS}
       width={1080}
       height={1920}
