@@ -111,7 +111,7 @@ Claude reads the skill, applies the motion rules, renders with Remotion, extract
 
 ## Examples
 
-[`examples/`](examples/) is a Remotion project with five finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, and KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG. Each shipped only after the render, inspect frames, fix, re-render loop.
+[`examples/`](examples/) is a Remotion project with six finished compositions built with this skill: a profile promo, the Focus Cat app promo, a "watch this video fix itself" demo where the motion rules apply themselves one by one, a beat-synced code edit with a synthesized 120 BPM track, KL Night, a vertical Reel of the Kuala Lumpur skyline drawn entirely in SVG, and Tanah Airku, a wau bulan's flight across Malaysia. Each shipped only after the render, inspect frames, fix, re-render loop.
 
 Here is the Focus Cat promo, 15.5 seconds, with a pixel-art mascot drawn in code. Click it for the MP4 with sound:
 
@@ -121,13 +121,17 @@ And KL Night, a 20-second 9:16 Reel. The Petronas Towers and Menara KL draw them
 
 [![KL Night, a Kuala Lumpur skyline Reel drawn in code](examples/videos/kl-night.gif)](examples/videos/kl-night.mp4)
 
+And Tanah Airku, a 25-second 9:16 Reel. A wau bulan flies over a Kedah paddy field at dawn, whip-pans to a Terengganu fishing boat at sunset, then the camera dives into the kite's center flower and comes out in a batik pattern drawn by canting, where a bunga raya blooms. Its petals open into the Jalur Gemilang. The score is an original zapin piece: Karplus-Strong gambus in the Hijaz mode, marwas, seruling, and a closing gong. Click it for the MP4 with sound:
+
+[![Tanah Airku, a wau bulan's flight across Malaysia](examples/videos/tanah-airku.gif)](examples/videos/tanah-airku.mp4)
+
 The others render from source in a few minutes:
 
 ```bash
 cd examples
 npm install
 npm run audio            # synthesize the SFX and music, no asset files needed
-npm run render:selffix   # or render:kl / render:codeedit / render:profile / render:focuscat
+npm run render:selffix   # or render:tanahairku / render:kl / render:codeedit / render:profile / render:focuscat
 ```
 
 ## 🤝 Contributing

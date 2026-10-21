@@ -9,6 +9,8 @@ import { SkillPromo, TOTAL_S as SKILL_TOTAL_S } from "./skill/SkillPromo";
 import { SelfFix, SELF_TOTAL_F } from "./selffix/SelfFix";
 import { CodeEdit, CE_TOTAL_F } from "./codeedit/CodeEdit";
 import { KLNight, KL_TOTAL_F, loadKLFonts } from "./kl/KLNight";
+import { TanahAirku, MY_TOTAL_F } from "./malaysia/TanahAirku";
+import { loadMyFonts } from "./malaysia/theme5";
 import { BgMesh, Grade, Grain, Vignette } from "./components/Layers";
 import { Hook } from "./scenes/Hook";
 import { Bio } from "./scenes/Bio";
@@ -20,6 +22,7 @@ loadBody();
 loadMono();
 loadSerif();
 loadKLFonts();
+loadMyFonts();
 
 const FPS = 30;
 
@@ -96,6 +99,14 @@ export const Root: React.FC = () => (
       id="KLNight"
       component={KLNight}
       durationInFrames={KL_TOTAL_F}
+      fps={FPS}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="TanahAirku"
+      component={TanahAirku}
+      durationInFrames={MY_TOTAL_F}
       fps={FPS}
       width={1080}
       height={1920}
