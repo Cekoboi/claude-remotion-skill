@@ -63,6 +63,8 @@ video (device mockup, recreated UI, 3D camera, shape morphs), also read
 code streaming, the result appearing and then changing), also read
 `references/ai-demo.md`. For an e-commerce or delivery story (logo, search,
 buy, map, doorstep, tagline), also read `references/customer-journey.md`.
+For a "watch it being made" piece (a mascot inside an editor, particle
+type, a live graph editor), also read `references/build-reveal.md`.
 
 Scene rhythm: HIT → hold (15–20 still frames) → build → HIT. Something must move
 in the first 15 frames. Never >90 frames without a new visual element.
@@ -148,6 +150,10 @@ speech, see the captions section of `references/motion-patterns.md`.
   comet, card orbit around a phone, hold-to-buy → toast, isometric city
   tracker, CSS 3D box with a drawn logo, text light sweep, letter-to-letter
   arrow, and the editor + second-screen setup behind this style.
+- `references/build-reveal.md` — the video that shows itself being made: an
+  editor UI as a tilted 3D set, billboarded mascot puppet that hops and
+  presses tools, canvas shards, particle typography, iridescent "working…"
+  pill, live easing graph + keyframe tracks, halftone mask, logo assembly.
 - `assets/theme.ts` — the theme template to copy into every project.
 
 ## Common failure modes to actively avoid

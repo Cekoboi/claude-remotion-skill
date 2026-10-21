@@ -65,8 +65,10 @@ remotion-motion-graphics/
 │   │                           #   branches, waveform, odometer, leaderboard climb
 │   ├── ai-demo.md              # Prompt → code → result demos: typing, code stream,
 │   │                           #   one-canvas camera, chips, text on a path
-│   └── customer-journey.md     # Logo → buy → delivery map → doorstep: sparks,
-│                               #   card orbit, isometric city, CSS 3D box
+│   ├── customer-journey.md     # Logo → buy → delivery map → doorstep: sparks,
+│   │                           #   card orbit, isometric city, CSS 3D box
+│   └── build-reveal.md         # Behind the build: editor as 3D set, mascot,
+│                               #   particle type, live graph editor
 └── assets/
     └── theme.ts                # Theme template (colors, easings, spring presets)
 ```
