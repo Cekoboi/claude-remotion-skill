@@ -9,6 +9,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const T = JSON.parse(readFileSync(join(ROOT, "src", "kedai", "timing.json"), "utf8"));
+// written by scripts/kedai/gen-vo.py; music ducks under every phrase
+const VO = JSON.parse(readFileSync(join(ROOT, "src", "kedai", "vo-durations.json"), "utf8"));
 const OUT = join(ROOT, "public", "sfx");
 mkdirSync(OUT, { recursive: true });
 
@@ -42,14 +44,27 @@ const add = (start, dur, fn, pan = 0) => {
 const midi = (m) => 440 * Math.pow(2, (m - 69) / 12);
 
 // ---------- music bed ----------
-// music volume envelope: silent first second, dips around the ding, fades at the credit
+// music volume envelope: silent first second, ducks under the voice-over,
+// dips around the ding, fades at the credit
 const ding = S.payoff.from + T.payoff.open + 6;
+// -8 dB under speech, with 0.12s ramps either side
+const duck = (t) => {
+  let g = 1;
+  for (const v of T.vo) {
+    const a = tf(v.at);
+    const b = a + VO[v.id];
+    const r = 0.12;
+    const inside = Math.min(1, Math.max(0, (t - (a - r)) / r), Math.max(0, ((b + r) - t) / r));
+    g = Math.min(g, 1 - 0.6 * inside);
+  }
+  return g;
+};
 const musicGain = (t) => {
   const f = t * FPS;
   const inn = Math.min(1, Math.max(0, (f - 26) / 30));
   const dip = f > ding - 8 && f < ding + 12 ? 0.3 : 1;
   const out = Math.min(1, Math.max(0, (T.total - 20 - f) / 70));
-  return inn * dip * out;
+  return inn * dip * out * duck(t);
 };
 const pad = (t0, notes, dur, vel = 0.045) => {
   for (const [i, m] of notes.entries()) {

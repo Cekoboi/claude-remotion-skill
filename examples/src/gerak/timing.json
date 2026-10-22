@@ -1,0 +1,44 @@
+{
+  "fps": 30,
+  "bpm": 96,
+  "total": 690,
+  "shots": {
+    "set": { "from": 0, "dur": 306, "note": "Manggis builds the title inside the Gerak Studio editor: break out, text tool, glow, playhead ride" },
+    "particles": { "from": 300, "dur": 72, "note": "full frame: Gerak 2.0 over a particle 2.0, then the dust blows away" },
+    "prompt": { "from": 366, "dur": 102, "note": "greeting, the prompt types, a chip is clicked, send" },
+    "pill": { "from": 462, "dur": 48, "note": "everything collapses into the working pill" },
+    "app": { "from": 504, "dur": 104, "note": "the pill opens into the animation app: live easing graph, bars, keyframes" },
+    "mark": { "from": 602, "dur": 48, "note": "push into the preview: halftone window, the mark assembles" },
+    "end": { "from": 644, "dur": 46, "note": "mark + Gerak 2.0 + tagline" }
+  },
+  "set": {
+    "stations": [
+      { "x": 1050, "y": 600, "at": 0, "stay": 30 },
+      { "x": 540, "y": 72, "at": 44, "stay": 26 },
+      { "x": 1800, "y": 318, "at": 84, "stay": 24 },
+      { "x": 1300, "y": 214, "at": 124, "stay": 16 },
+      { "x": 400, "y": 890, "at": 154, "stay": 999 }
+    ],
+    "hop": 14,
+    "shatter": 30,
+    "title": 52,
+    "drop": 124,
+    "ride": [160, 270],
+    "playhead": [400, 2100],
+    "cams": [
+      [0, 1050, 520, 0.95, 28, -6],
+      [40, 820, 320, 1.1, 38, -10],
+      [80, 1600, 380, 1.12, 36, -4],
+      [122, 1250, 480, 1.0, 34, -6],
+      [150, 700, 900, 1.12, 46, -12],
+      [270, 1900, 880, 1.12, 46, -8],
+      [306, 1050, 510, 1.75, 0, 0]
+    ]
+  },
+  "particles": { "disperse": [36, 64] },
+  "prompt": { "hello": 2, "box": 18, "type": 26, "cps": 28, "text": "Buat intro 10 saat untuk Gerak 2.0", "cursor": 64, "click": 80, "send": 92 },
+  "app": { "open": 0, "play": 10, "dur": 70 },
+  "mark": { "start": 6 },
+  "end": { "word": 4, "tag": 16 },
+  "glow": [[0, 960, 560, 1000, 0.55], [300, 960, 540, 1100, 0.8], [372, 960, 520, 900, 0.5], [462, 960, 540, 800, 0.95], [510, 960, 540, 1200, 0.45], [602, 960, 540, 900, 0.7], [690, 960, 540, 900, 0.6]]
+}

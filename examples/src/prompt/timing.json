@@ -1,0 +1,24 @@
+{
+  "fps": 30,
+  "bpm": 104,
+  "total": 450,
+  "shots": {
+    "intro": { "from": 0, "dur": 96, "note": "play mark spins in, wordmark converges, collapses to a pill that splits into chips, cursor clicks Logo" },
+    "prompt": { "from": 92, "dur": 84, "note": "close-up typing, dolly out to the prompt box, send" },
+    "code": { "from": 168, "dur": 44, "note": "Remotion code streams upward in perspective" },
+    "world": { "from": 204, "dur": 188, "note": "player swings in and plays the logo intro, whip to prompt 2, whip back to the night version" },
+    "sign": { "from": 388, "dur": 62, "note": "mark glows, sign-off flies in along a curve, stretch exit" }
+  },
+  "intro": { "mark": 0, "word": 8, "collapse": 38, "split": 48, "cursorFrom": 54, "cursorDur": 20, "click": 80 },
+  "prompt": { "type": 6, "cps": 30, "dollyFrom": 26, "dollyTo": 50, "send": 70,
+    "text": "Buat intro logo 5 saat untuk kedai kopi saya, Kopi Senja." },
+  "code": { "stream": 36 },
+  "world": {
+    "swing": 0, "play": 4, "type": 92, "cps": 30, "send": 120, "night": 128, "playNight": 132,
+    "text": "Tukar jadi tema malam.",
+    "cams": [[0, 960, 540, 1], [78, 960, 540, 1], [90, 960, 1460, 1], [122, 960, 1460, 1], [134, 960, 540, 1], [188, 960, 540, 1.05]]
+  },
+  "sign": { "travel": 26, "settle": 18, "exit": 50, "text": "Dibina dengan remotion-motion-graphics." },
+  "mini": { "dur": 66, "sun": 0, "cup": 10, "steam": 14, "word": 22, "tag": 36 },
+  "silk": [[0, 1], [90, 1], [110, 0.55], [170, 0.3], [210, 0.45], [380, 0.45], [400, 0]]
+}

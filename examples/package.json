@@ -2,9 +2,9 @@
   "name": "remotion-skill-examples",
   "version": "1.0.0",
   "private": true,
-  "description": "Nine finished compositions built with the remotion-motion-graphics skill",
+  "description": "Twelve finished compositions built with the remotion-motion-graphics skill",
   "scripts": {
-    "audio": "node scripts/gen-sfx.mjs && node scripts/gen-track.mjs && node scripts/gen-kl.mjs && node scripts/gen-my.mjs && node scripts/gen-neon.mjs && node scripts/gen-kedai.mjs",
+    "audio": "node scripts/gen-sfx.mjs && node scripts/gen-track.mjs && node scripts/gen-kl.mjs && node scripts/gen-my.mjs && node scripts/gen-neon.mjs && node scripts/gen-kedai.mjs && node scripts/gen-prompt.mjs && node scripts/gen-laju.mjs && node scripts/gen-gerak.mjs",
     "studio": "remotion studio src/index.ts",
     "render:profile": "remotion render src/index.ts HaidrrrryPromo out/profile-promo.mp4 --codec h264 --crf 16",
     "render:focuscat": "remotion render src/index.ts FocusCatPromo out/focus-cat-promo.mp4 --codec h264 --crf 16",
@@ -13,6 +13,10 @@
     "render:kl": "remotion render src/index.ts KLNight out/kl-night.mp4 --codec h264 --crf 16",
     "render:tanahairku": "remotion render src/index.ts TanahAirku out/tanah-airku.mp4 --codec h264 --crf 16",
     "render:neon": "remotion render src/index.ts MalaysiaNeon out/malaysia-neon.mp4 --codec h264 --crf 16",
+    "render:prompt": "remotion render src/index.ts PromptToVideo out/prompt-to-video.mp4 --codec h264 --crf 18",
+    "render:laju": "remotion render src/index.ts LajuJourney out/laju-journey.mp4 --codec h264 --crf 18",
+    "render:gerak": "remotion render src/index.ts GerakBuild out/gerak-build.mp4 --codec h264 --crf 18",
+    "kedai:vo": "python3 scripts/kedai/gen-vo.py",
     "render:kedai": "remotion render src/index.ts KedaiLaunch out/kedai-launch.mp4 --codec h264 --crf 18",
     "kerja:vo": "python3 scripts/kerja/gen-vo.py",
     "kerja:timing": "node scripts/kerja/build-timing.mjs",
@@ -22,6 +26,9 @@
   "dependencies": {
     "@remotion/cli": "^4.0.0",
     "@remotion/google-fonts": "^4.0.0",
+    "@remotion/layout-utils": "^4.0.0",
+    "@remotion/motion-blur": "^4.0.0",
+    "@remotion/paths": "^4.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "remotion": "^4.0.0"

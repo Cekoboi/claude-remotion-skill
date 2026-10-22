@@ -57,7 +57,14 @@ transitions, parallax). Compose scenes from those patterns. For pacing, rhythm,
 typography, color palettes, and sound design rules, read
 `references/design-rules.md`. For an app, SaaS, e-commerce or product launch
 video (device mockup, recreated UI, 3D camera, shape morphs), also read
-`references/product-promo.md`.
+`references/product-promo.md`. When one glowing line should carry the story
+(drawn paths, branches, waveforms, streak counters, leaderboards), also read
+`references/light-path.md`. For an AI or developer-tool demo (a prompt typed,
+code streaming, the result appearing and then changing), also read
+`references/ai-demo.md`. For an e-commerce or delivery story (logo, search,
+buy, map, doorstep, tagline), also read `references/customer-journey.md`.
+For a "watch it being made" piece (a mascot inside an editor, particle
+type, a live graph editor), also read `references/build-reveal.md`.
 
 Scene rhythm: HIT → hold (15–20 still frames) → build → HIT. Something must move
 in the first 15 frames. Never >90 frames without a new visual element.
@@ -131,6 +138,22 @@ speech, see the captions section of `references/motion-patterns.md`.
   spotlight orb, logo lockup reveal, CSS device mockup, screen takeover, rack
   focus over recreated UI, 3D camera, velocity blur, streak type, pill →
   notification morph. Read before any product or app promo.
+- `references/light-path.md` — one glowing line through the whole video with
+  `@remotion/paths`: comet trail, line → waveform, branch split with node
+  ignition, segmented underline callback, speed-line burst, hop with echo,
+  flying word tiles, odometer counter, leaderboard climb.
+- `references/ai-demo.md` — "type a prompt, watch it build": silk gradient,
+  tracking reveal, pill splitting into chips, clicking cursor, typing with a
+  hot tail + dolly out, 3D code stream, one-canvas camera with whips, off-camera
+  state change, text flying in along a path, stretch exit.
+- `references/customer-journey.md` — logo to doorstep in one take: spark
+  comet, card orbit around a phone, hold-to-buy → toast, isometric city
+  tracker, CSS 3D box with a drawn logo, text light sweep, letter-to-letter
+  arrow, and the editor + second-screen setup behind this style.
+- `references/build-reveal.md` — the video that shows itself being made: an
+  editor UI as a tilted 3D set, billboarded mascot puppet that hops and
+  presses tools, canvas shards, particle typography, iridescent "working…"
+  pill, live easing graph + keyframe tracks, halftone mask, logo assembly.
 - `assets/theme.ts` — the theme template to copy into every project.
 
 ## Common failure modes to actively avoid
