@@ -90,6 +90,12 @@ export const Billboard: React.FC<{cams: Cam[]; x: number; y: number; children: R
   );
 };
 ```
+Give the preview a **dark neutral canvas** (e.g. #3A3D44), not white or light
+gray: under the bloom pass from `product-promo.md` §15 a light canvas becomes a
+glowing lightbox, and raising the bloom's contrast does not fix it (CSS
+contrast pivots at mid-gray, so mid tones always lift). A neutral ground also
+keeps a colored mascot readable.
+
 Design the UI as your own generic editor (toolbar of icon buttons, a panel
 list, a preview, a timeline of colored bars); do not copy a real product's
 trade dress. Make UI text large enough to survive the tilt (≥ 18px at set
