@@ -94,6 +94,16 @@ npx skills add remotion-dev/skills -a claude-code -s '*' -y --copy
 
 **Update later:** run `git pull` in your clone, then copy the folder again (on Desktop, re-upload the `.skill` file).
 
+## 🎥 Bonus skill: GenHQ Infinite Angle
+
+[`genhq-infinite-angle/`](genhq-infinite-angle/) turns one single-angle clip into a short, timestamped **Seedance 2.5** video-to-video prompt that keeps the same people, words, action and timing, and only re-shoots it from new camera angles cut on the dialogue. Claude pulls timestamped frames with `scripts/extract_frames.sh`, maps the layout and key moments, asks one question (same look or cinematic interpretation?), then hands back a 120–200 word prompt to run with the original uploaded as `@Video1`.
+
+Install it the same way as the main skill:
+```bash
+cp -r claude-remotion-skill/genhq-infinite-angle ~/.claude/skills/
+```
+On Claude Desktop / Claude.ai, upload `genhq-infinite-angle.skill`. Then share a video and ask for *"infinite camera angles"* or *"a Seedance prompt with new angles"*.
+
 ## 🎯 Usage
 
 Just talk to Claude normally — the skill triggers itself:
